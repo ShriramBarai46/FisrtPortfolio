@@ -1,21 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <title>Fashion</title>
     <style>
-        h1{
-            background-color: darkcyan;
-            color: #fff;
+        header {
+            border: 1px solid black;
+            box-shadow: 2px 3px 4px black;
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav-bar{
+            display: flex;
+        }
+        .nav-bar div{
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+        .banner{
+            height: 400px;
+            background-image: url("./public/images/Portfolio.png");
+            box-shadow: 2px 2px 2px black;
+            border: 0.3px solid black;
+            margin-top: 5px;
+        }
+        .side-panel{
+            font-family: Arial;
+            font-size: 20px;
             text-align: center;
-            padding: 30px;
+            align-items: center;
+            margin-top: 70px;
+            width: 600px;
+            height: 300px;
+            padding: 10px;   
+        }
+        .text{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            height: 300px;
+        }
+        .text-1{
+            width: 500px;
+            margin-left: 40px;
+            margin-top: 30px;
+            font-family: arial;
+        }
+        .text-2{
+            width: 500px;
+            width: 500px;
+            margin-left: 90px;
+            margin-top: 30px;
+            font-family: arial;
+        }
+        .card{
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            height: 650px;
+           
+            
+        }
+        .card-1{
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            box-shadow: 2px 3px 4px black;
+            font-family: arial;
+            font-weight: bold;
+            margin-left: 10px;
+            position: relative;
+            z-index: 1;
+
+        }
+        .card-2{
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            box-shadow: 2px 3px 4px black;
+            font-family: arial;
+            font-weight: bold;
+            margin-left: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .card-3{
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            box-shadow: 2px 3px 4px black;
+            font-family: arial;
+            font-weight: bold;
+            margin-left: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .card-1 div{
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+        .card-1 img{
+            margin-top: -10px;
+        }
+        .card-2 div{
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+        .card-2 img{
+            margin-top: -10px;
+        }
+        .card-3 div{
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+        .imgg{
+            margin-top:18px;
+        }
+        .card-1::before{
+            content: "";
+            width:1px;
+            height: 100%;
+            background-color: orangered;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: 0.6s all;
+        }
+        .card-1:hover::before{
+            width: 100%;
+        }
+        .card-2::before{
+            content: "";
+            width:1px;
+            height: 100%;
+            background-color: orangered;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: 0.6s all;
+        }
+        .card-2:hover::before{
+            width: 100%;
+        }
+        .card-3::before{
+            content: "";
+            width:1px;
+            height: 100%;
+            background-color: orangered;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: 0.6s all;
+        }
+        .card-3:hover::before{
+            width: 100%;
+        }
+        .banner-2{
+            height: 300px;
+            width: 1230px;
+            background-image: url("./public/images/dont.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 10px;
+        }
+        .banner-2 div{
+           margin-left: 1050px;
+        }
+        .register{
+            height: 500px;
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            background-color:rgb(249, 244, 239);
+        }
+        .para{
+            margin: 40px;
+
+        }
+        .register-2{
+            margin: 40px;
+
+        }
+        footer{
+            height: 500px;
+            background-color: rgb(3, 3, 60);
+            color: #fff;
+        }
+        .foot-1{
+            align-items: center;
+            text-align: center;
+            align-content: center;
+        }
+        .imgg2 img{
+            margin-top: 100px;
+            width: 200px;
+            height: 50px;
+        }
+        .foot-2{
+            display: flex;
+            margin-right: 10px;
+            margin-top: 100px;
+            margin-left: 20px;
+
+        }
+        .foot-3 {
+            display: flex;
+            justify-content: end;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .foot-3 span{
+            margin-right: 10px;
         }
     </style>
 </head>
-<body>
-    <h1>Fashion site</h1>
-    
+
+<body class="container-fluid">
+    <header>
+        <div>
+            <img src="./public/images/profile logo.png" alt="logo">
+        </div>
+        <div class="nav-bar">
+            <div>Home</div>
+            <div>About</div>
+            <div>Services</div>
+            <div>Portfolio</div>
+            <div>Project</div>
+            <div>Contact</div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="side-panel">
+            <h1>I'M Web Developer Shriram.K.Barai</h1>
+            <p>I have Skill HTML,CSS Bootstrap,React-js</p>
+        </div>
+    </div>
+    <div class="text">
+        <div class="text-1">
+            <h3 class="mb-3" style="font-weight:bold;">Designing With Passion While Exploring The World.</h3>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor ididunt ut labore et dolore magna aliqua. Quis ipsum suspendisces gravida. Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.</p>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor ididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="text-2">
+            <h1 class="mb-3">Any Type Of Query
+            & Discussion.</h1>
+            <p>Late talk with me</p>
+            <a href="#">shrirambarai46@gmail.com</a><span class="bi bi-caret-right-fill"></span>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-1">
+            <div>
+                <img src="./public/images/Uiux logo.jpg" alt="logo">
+                <h4>UI/UX Design</h4>
+                <p style="line-height: 2;">Free resource that will help nderstand thecv designc process and improve theroi nderstand the design process andisei impro are of vquality.</p>
+            </div>
+        </div>
+        <div class="card-2">
+            <div>
+                <img src="./public/images/digi mrkt.jpg" alt="logo" height="150px">
+                <h4>Digital Marketing</h4>
+                <p style="line-height: 2;">Free resource that will help nderstand thecv designc process and improve theroi nderstand the design process andisei impro are of vquality.</p>
+            </div>
+        </div>
+        <div class="card-3">
+            <div>
+               <div class="imgg">
+                <img src="./public/images/web logo.png" alt="logo" height="100px" width="100px">
+               </div>
+                <h4>Web Design</h4>
+                <p style="line-height: 2;">Free resource that will help nderstand thecv designc process and improve theroi nderstand the design process andisei impro are of vquality.</p>
+            </div>
+        </div>
+        <div class="card-1">
+            <div>
+                <img src="./public/images/Uiux logo.jpg" alt="logo">
+                <h4>UI/UX Design</h4>
+                <p style="line-height: 2;">Free resource that will help nderstand thecv designc process and improve theroi nderstand the design process andisei impro are of vquality.</p>
+            </div>
+        </div>
+        <div class="card-2">
+            <div>
+                <img src="./public/images/digi mrkt.jpg" alt="logo" height="150px">
+                <h4>Digital Marketing</h4>
+                <p style="line-height: 2;">Free resource that will help nderstand thecv designc process and improve theroi nderstand the design process andisei impro are of vquality.</p>
+            </div>
+        </div>
+        <div class="card-3">
+            <div>
+               <div class="imgg">
+                <img src="./public/images/web logo.png" alt="logo" height="100px" width="100px">
+               </div>
+                <h4>Web Design</h4>
+                <p style="line-height: 2;">Free resource that will help nderstand thecv designc process and improve theroi nderstand the design process andisei impro are of vquality.</p>
+            </div>
+        </div>
+    </div>
+    <div class="banner-2">
+        <div>
+            <button class="btn btn-danger">Contact Me Now</button>
+        </div>
+    </div>
+    <div class="register">
+        <div class="para">
+            <h1>If Not Now, When? Let’s Work Together!</h1>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor ididunt ut labore et dolore magna aliqua. Quis ipsum suspendisces gravida. Risus commodo viverra.</p>
+            <div>
+                <img src="./public/images/sign.png" alt="logo" width="" height="">
+            </div>
+        </div>
+        <div class="register-2">
+            <form>
+                <input type="text" placeholder="FullName" class="w-100 h-100 p-3" pattern="/w" >
+                <br><br>
+                <input type="text" placeholder="Email" class="w-100 p-3">
+                <br><br>
+                <textarea name="" id="" placeholder="Your Message" cols="70" rows="5"></textarea>
+                <button class="btn btn-danger w-100 p-3">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="foot-1">
+            <div class="imgg2">
+                <img src="./public/images/profile logo.png" alt="">
+            </div>
+            <div class="maill mt-4" style="font-size:60px ;">
+                shrirambarai46@gmail.com
+            </div>
+            <div class="add">
+                <p class="mt-3" style="font-size:30px ;">Sion,Mumbai-400022</p>
+            </div>
+        </div>
+        <div class="foot-2">
+            <div style="color:gray;">Copyright ©2022 All rights reserved | This template is made with  by Colorlib</div>
+        </div>
+        <div class="foot-3" style="color:gray;">
+            <span>Stay Connected</span>
+            <span class="bi bi-twitter"></span>
+            <span class="bi bi-instagram"></span>
+            <span class=" bi bi-facebook"></span> 
+            <span class="bi bi-skype"></span>
+        </div>
+
+    </footer>
 </body>
 </html>
